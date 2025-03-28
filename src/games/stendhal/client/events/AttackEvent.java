@@ -32,7 +32,7 @@ public class AttackEvent extends Event<RPEntity> {
 		} catch (ArrayIndexOutOfBoundsException exc) {
 			logger.warn("Unknown damage type: " + idx);
 			dtype = Nature.CUT;
-
+		}
 
 		RPEntity target = entity.getAttackTarget();
 		if (target != null) {
@@ -43,7 +43,7 @@ public class AttackEvent extends Event<RPEntity> {
 					target.onDamaged(entity, damage);
 				} else {
 					target.onBlocked();
-				}
+
 			} else {
 				target.onMissed();
 			}
